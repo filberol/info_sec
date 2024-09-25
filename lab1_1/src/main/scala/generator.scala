@@ -22,9 +22,3 @@ def generatePattern(): Grid = {
   }
   grid
 }
-
-def printGrid(grid: Grid): Unit = {
-  println(grid.map(array => array.map(
-    element => if element then "🟩" else "⬜"
-  ).mkString("")).mkString("\n"))
-}
