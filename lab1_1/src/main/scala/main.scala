@@ -16,7 +16,7 @@ def main(): Unit = {
   println(s"\tReading from file - $inputFile")
   val input = fromFile(inputFile)
   val inputText = input.mkString
-  println(inputText.take(50) + "...")
+  println(inputText.take(100) + "...")
 //  println("\tSplit into parts ->")
   val splitText = inputText.grouped(partSize).toArray
   input.close()
@@ -34,7 +34,7 @@ def main(): Unit = {
 //  charGrids.slice(0, 1).foreach(it => printCharGrid(it))
   println("\tConvert to encoded string")
   val encodedStr = charGrids.map(grid => charGridToString(grid)).mkString
-  println(encodedStr.take(50) + "...")
+  println(encodedStr.take(100) + "...")
 
   //DECODE
   println("\tDecode")
@@ -44,5 +44,5 @@ def main(): Unit = {
   val decodedString = encodedStr.grouped(partSize).map(
     stringPart => decodeGridByPattern(pattern, stringToCharGrid(stringPart))
   ).mkString
-  println(decodedString.take(50) + "...")
+  println(decodedString.take(100) + "...")
 }
