@@ -13,25 +13,18 @@ def main(): Unit = {
   val pattern = generatePattern()
   println("\tGenerated pattern")
   printGrid(pattern)
+
   println(s"\tReading from file - $inputFile")
   val input = fromFile(inputFile)
   val inputText = input.mkString
   println(inputText.take(100) + "...")
-//  println("\tSplit into parts ->")
-  val splitText = inputText.grouped(partSize).toArray
+  val splitText = splitStringIntoBlocks(inputText, partSize)
   input.close()
-  for (part <- splitText.indices) {
-    if (splitText(part).length < partSize) {
-      splitText(part) = splitText(part).padTo(partSize, ' ')
-    }
-  }
-//  splitText.slice(0, 5).foreach(part => println(part))
-//  println("\tPaste into grids")
   var charGrids: Array[CharGrid] = Array()
   splitText.foreach(stringPart => {
     charGrids :+= encodeStringByPattern(pattern, stringPart)
   })
-//  charGrids.slice(0, 1).foreach(it => printCharGrid(it))
+
   println("\tConvert to encoded string")
   val encodedStr = charGrids.map(grid => charGridToString(grid)).mkString
   println(encodedStr.take(100) + "...")

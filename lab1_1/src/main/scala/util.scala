@@ -16,4 +16,14 @@ def printGrid(grid: Grid): Unit = {
 def printCharGrid(grid: CharGrid): Unit = {
   println(grid.map(array => array.mkString("")).mkString("\n"))
 }
-  
+
+def splitStringIntoBlocks(string: String, partSize: Int): Array[String] = {
+  val splitText = string.grouped(partSize).toArray
+  for (part <- splitText.indices) {
+    if (splitText(part).length < partSize) {
+      splitText(part) = splitText(part).padTo(partSize, ' ')
+    }
+  }
+  splitText
+}
+
