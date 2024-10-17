@@ -1,5 +1,3 @@
-import java.util.regex.Pattern
-
 def charGridToString(charGrid: CharGrid): String = {
   charGrid.map(row => row.mkString("")).mkString("")
 }

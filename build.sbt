@@ -11,3 +11,8 @@ lazy val lab1_2 = project
   .settings(
     name := "lab1_2"
   )
+
+lazy val lab2_1 = project
+  .settings(
+    name := "lab2_1"
+  )

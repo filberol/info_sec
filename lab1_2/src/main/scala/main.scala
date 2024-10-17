@@ -4,9 +4,9 @@ import scala.sys.exit
 
 @main
 def main(): Unit = {
-  val inputFile = "input.txt"
+  val inputFile = "resources/input.txt"
   val encodeFile = "encode.txt"
-  val key = "blyat".getBytes("UTF-8")
+  val key = "aboba".getBytes("UTF-8")
   
   val input = fromFile(inputFile)
   val plaintext = input.mkString

@@ -7,7 +7,7 @@ import java.io.PrintWriter
 @main
 def main(): Unit = {
   // ENCODE
-  val inputFile = "input.txt"
+  val inputFile = "resources/input.txt"
   val encodeFile = "encode.txt"
   val partSize = GridSize * GridSize
   val pattern = generatePattern()
