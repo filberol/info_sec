@@ -12,7 +12,7 @@ lazy val lab1_2 = project
     name := "lab1_2"
   )
 
-lazy val lab2_1 = project
+lazy val lab2_6 = project
   .settings(
-    name := "lab2_1"
+    name := "lab2_6"
   )
