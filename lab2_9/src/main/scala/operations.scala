@@ -17,7 +17,6 @@ def addPoints(P: (BigInt, BigInt), Q: (BigInt, BigInt), a: BigInt, p: BigInt): (
   (x3, y3)
 }
 
-// Function to compute modular inverse
 def modInverse(k: BigInt, n: BigInt): Option[BigInt] = {
   (1 until n.intValue).find(i => (k * i) % n == 1).map(BigInt(_))
 }
